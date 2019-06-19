@@ -40,7 +40,7 @@ public class MentorServiceLocalIT extends IntegrationTestWithDataset {
 
     @Test
     public void registerTraining() {
-        EmailAddress linusId = MentorDataSet.LINUS.getId();
+        EmailAddress linusId = MentorDataSet.THOR.getId();
         MentorTraining training = someNewTraining(linusId);
         TrainingAddCommand command = new TrainingAddCommand(
                 training.getFacilitiesDesc(), training.getSkillId(), training.getPrerequisitesDesc(),
@@ -61,7 +61,7 @@ public class MentorServiceLocalIT extends IntegrationTestWithDataset {
 
     @Test
     public void removeTraining() {
-        Mentor linus = sdj.findById(MentorDataSet.LINUS.getId()).orElseThrow(NoSuchElementException::new);
+        Mentor linus = sdj.findById(MentorDataSet.THOR.getId()).orElseThrow(NoSuchElementException::new);
         MentorTraining trainingToRemove = linus.getTrainings().stream().findFirst().orElseThrow(NoSuchElementException::new);
         int numberOfTrainingsBeforeRemoval = linus.getTrainings().size();
         sut.removeTrainings(linus.getId(), singleton(trainingToRemove.getId()));

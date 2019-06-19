@@ -136,7 +136,7 @@ public class MentorTrainingSearchLocalIT extends IntegrationTestWithNoDataset {
         }
 
         public MentorInput setupMentor() {
-            linus = MentorDataSet.LINUS;
+            linus = MentorDataSet.THOR;
             sdjMentors.add(linus);
             mentorTraining = linus.getTrainings().stream()
                     .findFirst().orElseThrow(NoSuchElementException::new);

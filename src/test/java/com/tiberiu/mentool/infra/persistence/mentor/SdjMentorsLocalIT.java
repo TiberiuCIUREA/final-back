@@ -31,7 +31,7 @@ public class SdjMentorsLocalIT {
 
     @Test
     public void should_save_correctly_a_mentor() {
-        Mentor aMentor = MentorDataSet.LINUS;
+        Mentor aMentor = MentorDataSet.THOR;
         sut.add(aMentor);
         Mentor savedMentor = sdj.getOne(aMentor.getId());
         assertThat(savedMentor).isEqualToComparingFieldByFieldRecursively(aMentor);
@@ -39,7 +39,7 @@ public class SdjMentorsLocalIT {
 
     @Test
     public void should_get_correctly_a_mentor() {
-        Mentor aMentor = MentorDataSet.LINUS;
+        Mentor aMentor = MentorDataSet.THOR;
         sdj.saveAndFlush(aMentor);
         Mentor dbMentor = sut.getOrThrow(aMentor.getId());
         assertThat(dbMentor).isEqualToComparingFieldByFieldRecursively(aMentor);

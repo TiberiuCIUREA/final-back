@@ -16,17 +16,17 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.singleton;
 
 public class MentorDataSet {
-    private static final EmailAddress LINUS_EMAIL_ADDRESS = new EmailAddress("linus.coolguy@cool.com");
-    public static Mentor LINUS = new Mentor(
-            LINUS_EMAIL_ADDRESS, "Linus", "CoolGuy",
-            new PhoneNumber("0722123456"), 10,
+    private static final EmailAddress THOR_EMAIL_ADDRESS = new EmailAddress("thor@thor.com");
+    public static Mentor THOR = new Mentor(
+            THOR_EMAIL_ADDRESS, "Thor", "BigGuy",
+            new PhoneNumber("0323332332"), 10,
             "linkedingURL", linusTrainings(), 100
     );
 
 
-    private static final EmailAddress EDWARD_ADDRESS = new EmailAddress("edward@edward.com");
-    public final static Mentor EDWARD = new Mentor(
-            EDWARD_ADDRESS, "Edward", "The last", new PhoneNumber("1234567890"),
+    private static final EmailAddress POGBA_EMAIL_ADDRESS = new EmailAddress("pogba@pogba.com");
+    public final static Mentor POGBA = new Mentor(
+            POGBA_EMAIL_ADDRESS, "Pogba", "Pogba", new PhoneNumber("1234567890"),
             3, "www.linkedin.com", edwardTrainings(), 20
     );
 
@@ -43,13 +43,13 @@ public class MentorDataSet {
     );
 
     public static List<Mentor> getAllMentors() {
-        return asList(EDWARD, JOHN, HERCULES, LINUS);
+        return asList(POGBA, JOHN, HERCULES, THOR);
     }
 
     private static Set<MentorTraining> linusTrainings() {
         MentorTraining java = new MentorTraining(new UniqueId(),
                 "Hands-on", JAVA.getId(), "Java mega core",
-                20, LINUS_EMAIL_ADDRESS,
+                20, THOR_EMAIL_ADDRESS,
                 new BigDecimal(100)
         );
         return singleton(java);
@@ -92,7 +92,7 @@ public class MentorDataSet {
     private static Set<MentorTraining> edwardTrainings() {
         MentorTraining javaTraining = new MentorTraining(
                 new UniqueId(), "Cool java training", JAVA.getId(), "java core",
-                10, MentorDataSet.EDWARD_ADDRESS, new BigDecimal(200)
+                10, MentorDataSet.POGBA_EMAIL_ADDRESS, new BigDecimal(200)
         );
         return singleton(javaTraining);
     }

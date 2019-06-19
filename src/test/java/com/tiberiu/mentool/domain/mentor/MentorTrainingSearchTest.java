@@ -115,7 +115,7 @@ public class MentorTrainingSearchTest {
         }
 
         MentorInput setupMentor() {
-            linus = MentorDataSet.LINUS;
+            linus = MentorDataSet.THOR;
             inMemoryMentors.add(linus);
             mentorTraining = linus.getTrainings().stream()
                     .findFirst().orElseThrow(NoSuchElementException::new);
